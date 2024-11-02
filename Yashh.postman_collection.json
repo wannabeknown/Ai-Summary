@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "54a8f772-b229-4fe5-b195-2daf9b4b47fc",
+		"name": "Yashh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38201842",
+		"_collection_link": "https://www.postman.com/altimetry-candidate-46801319/ai-text-summary/collection/bu0mw57/yashh?action=share&source=collection_link&creator=38201842"
+	},
+	"item": [
+		{
+			"name": "Summarize Text",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"if (response && response[0] && response[0].summary_text) {\r",
+							"    const summaryText = response[0].summary_text;\r",
+							"    \r",
+							"    // Display summary in Postman Console\r",
+							"    console.log(\"Summary:\", summaryText);\r",
+							"    \r",
+							"    // Save summary as environment variable\r",
+							"    pm.environment.set(\"summary_output\", summaryText);\r",
+							"} else {\r",
+							"    console.log(\"Error:\", response);\r",
+							"    pm.environment.set(\"summary_output\", \"No summary returned. Check the input text.\");\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"inputs\": \"{{user_input}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-inference.huggingface.co/models/google/pegasus-xsum",
+					"protocol": "https",
+					"host": [
+						"api-inference",
+						"huggingface",
+						"co"
+					],
+					"path": [
+						"models",
+						"google",
+						"pegasus-xsum"
+					]
+				},
+				"description": "This endpoint makes an HTTP POST request to [https://api-inference.huggingface.co/models/google/pegasus-xsum](https://api-inference.huggingface.co/models/google/pegasus-xsum) to generate a summary based on the input provided.\n\n### Request Body\n\n- `inputs`: The input text for which the summary is to be generated.\n    \n\n### Response\n\nThe response is in JSON format with the following schema:\n\n``` json\n[\n  {\n    \"summary_text\": \"string\"\n  }\n]\n\n ```"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer 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",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
