@@ -45,6 +45,6 @@ After importing, you can use this collection to test the text summarization API.
 {
   "inputs": "Johannes Gutenberg introduced the printing revolution in Europe..."
 }
-
+```
+## Response 
 ![image](https://github.com/user-attachments/assets/3a47c44f-d817-4501-abe4-164e018ccf8a)
-
