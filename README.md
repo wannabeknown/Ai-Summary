@@ -21,17 +21,22 @@ This tool allows users to input lengthy text and receive a concise summary. The 
 - **Text Summarization**: Summarizes input text into a brief, clear output.
 - **User-Friendly Input**: Allows users to enter text via Postman’s environment variables.
 
-## Setup Instructions
+## Text Summarizer API Collection
 
-1. **Get Hugging Face API Key**: Sign up on [Hugging Face](https://huggingface.co/) to get an API key.
-2. **Import Postman Collection**: Import the provided Postman collection (`TextSummarizerCollection.json`) into Postman.
-3. **Configure Environment Variable**: Set the `user_input` environment variable with the text to summarize.
+This repository includes a Postman collection for a text summarization tool using the Hugging Face Inference API.
 
-## Usage
+### Importing the Collection
 
-1. **Set Authorization**: In Postman, set up Bearer Token authorization with your Hugging Face API key.
-2. **Enter Text to Summarize**: Set the `user_input` environment variable in Postman.
-3. **Send Request**: Send the POST request, and view the summarized output in the response body.
+1. **Download** the `TextSummarizerCollection.json` file from this repository.
+2. Open **Postman** and go to the **Collections** tab.
+3. Click **Import** and select the downloaded JSON file.
+4. Once imported, set up your environment variables and API key as needed.
+
+### Example Usage
+
+After importing, you can use this collection to test the text summarization API. Make sure to:
+- **Set your Authorization** with the Hugging Face API key.
+- **Configure the `user_input` environment variable** in Postman with the text to be summarized.
 
 ## Sample Request & Response
 
