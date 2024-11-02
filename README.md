@@ -40,3 +40,6 @@ This tool allows users to input lengthy text and receive a concise summary. The 
 {
   "inputs": "Johannes Gutenberg introduced the printing revolution in Europe..."
 }
+
+![image](https://github.com/user-attachments/assets/3a47c44f-d817-4501-abe4-164e018ccf8a)
+
